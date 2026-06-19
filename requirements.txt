@@ -1,0 +1,21 @@
+# Core ML
+scikit-learn
+imbalanced-learn
+fairlearn
+numpy
+pandas
+scipy
+
+# Persistence
+joblib
+
+# Experiment tracking
+mlflow
+
+# API (Week 2)
+fastapi
+uvicorn[standard]
+pydantic
+
+# Monitoring (Week 2)
+evidently

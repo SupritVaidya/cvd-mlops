@@ -1,0 +1,27 @@
+{
+  "overall": {
+    "accuracy": 0.8804,
+    "precision": 0.8774,
+    "recall": 0.9118,
+    "f1": 0.8942
+  },
+  "by_gender": {
+    "male": {
+      "n_samples": 146,
+      "accuracy": 0.863,
+      "precision": 0.88,
+      "recall": 0.9167,
+      "f1": 0.898
+    },
+    "female": {
+      "n_samples": 38,
+      "accuracy": 0.9474,
+      "precision": 0.8333,
+      "recall": 0.8333,
+      "f1": 0.8333
+    }
+  },
+  "fairness": {
+    "recall_gap_male_female": 0.0834
+  }
+}
