@@ -1,7 +1,6 @@
 venv/
 __pycache__/
 *.pyc
-models/*.joblib
 mlruns.db
 mlruns/
 .env
