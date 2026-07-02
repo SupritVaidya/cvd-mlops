@@ -1,0 +1,8 @@
+venv
+frontend
+.git
+__pycache__
+*.pyc
+mlruns
+mlruns.db
+data
