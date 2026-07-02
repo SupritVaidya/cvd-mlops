@@ -1,0 +1,62 @@
+<div class="model-info-container">
+  <h1>Model Performance</h1>
+  <p class="subtitle">Random Forest — evaluated on held-out test set</p>
+
+  @if (!metrics) {
+    <p class="loading">Loading metrics...</p>
+  }
+
+  @if (metrics) {
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-value">{{ (metrics.overall.accuracy * 100) | number:'1.1-1' }}%</div>
+        <h3>Accuracy</h3>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">{{ (metrics.overall.precision * 100) | number:'1.1-1' }}%</div>
+        <h3>Precision</h3>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">{{ (metrics.overall.recall * 100) | number:'1.1-1' }}%</div>
+        <h3>Recall</h3>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">{{ (metrics.overall.f1 * 100) | number:'1.1-1' }}%</div>
+        <h3>F1 Score</h3>
+      </div>
+    </div>
+
+    <p class="section-title">Fairness — By Gender</p>
+    <div class="detail-card">
+      <div class="detail-row">
+        <span class="key">Male samples</span>
+        <span class="val">{{ metrics.by_gender.male.n_samples }}</span>
+      </div>
+      <div class="detail-row">
+        <span class="key">Male accuracy</span>
+        <span class="val">{{ (metrics.by_gender.male.accuracy * 100) | number:'1.1-1' }}%</span>
+      </div>
+      <div class="detail-row">
+        <span class="key">Male recall</span>
+        <span class="val">{{ (metrics.by_gender.male.recall * 100) | number:'1.1-1' }}%</span>
+      </div>
+      <div class="detail-row">
+        <span class="key">Female samples</span>
+        <span class="val">{{ metrics.by_gender.female.n_samples }}</span>
+      </div>
+      <div class="detail-row">
+        <span class="key">Female accuracy</span>
+        <span class="val">{{ (metrics.by_gender.female.accuracy * 100) | number:'1.1-1' }}%</span>
+      </div>
+      <div class="detail-row">
+        <span class="key">Female recall</span>
+        <span class="val">{{ (metrics.by_gender.female.recall * 100) | number:'1.1-1' }}%</span>
+      </div>
+      <div class="detail-row">
+        <span class="key">Recall gap (M vs F)</span>
+        <span class="val">{{ (metrics.fairness.recall_gap_male_female * 100) | number:'1.1-1' }}%</span>
+      </div>
+    </div>
+  }
+
+</div>

@@ -1,0 +1,31 @@
+<div class="home-container">
+
+  <div class="hero">
+    <h1>Cardiovascular Disease Prediction</h1>
+    <p class="subtitle">ML-powered risk assessment with fairness monitoring</p>
+  </div>
+
+  <div class="status-card">
+    <div class="status-dot" [class.up]="healthStatus === 'Backend is up'" [class.down]="healthStatus === 'Backend is down'"></div>
+    <span class="status-text">{{ healthStatus || 'Checking connection...' }}</span>
+  </div>
+
+  <div class="cards-row">
+    <div class="info-card">
+      <div class="icon">🫀</div>
+      <h2>Risk Prediction</h2>
+      <p>Enter patient vitals to get an instant cardiovascular disease risk score.</p>
+    </div>
+    <div class="info-card">
+      <div class="icon">📊</div>
+      <h2>Model Performance</h2>
+      <p>View accuracy, precision, recall and F1 score of the trained model.</p>
+    </div>
+    <div class="info-card">
+      <div class="icon">⚖️</div>
+      <h2>Fairness Monitoring</h2>
+      <p>Predictions are flagged when bias risk is detected across demographic groups.</p>
+    </div>
+  </div>
+
+</div>

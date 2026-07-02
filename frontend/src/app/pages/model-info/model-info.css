@@ -1,0 +1,88 @@
+.model-info-container {
+  padding: 2rem 0;
+}
+
+.model-info-container h1 {
+  margin-bottom: 0.5rem;
+}
+
+.loading {
+  color: #8080a0;
+  font-size: 0.95rem;
+  margin-top: 1rem;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.metric-card {
+  background: #1a1a2e;
+  border: 1px solid #2a2a4a;
+  border-radius: 16px;
+  padding: 1.75rem;
+  text-align: center;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.metric-card:hover {
+  border-color: #e94560;
+  transform: translateY(-3px);
+}
+
+.metric-card .metric-value {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #e94560;
+  margin-bottom: 0.5rem;
+}
+
+.metric-card h3 {
+  font-size: 0.85rem;
+  color: #8080a0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.section-title {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: #8080a0;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.detail-card {
+  background: #1a1a2e;
+  border: 1px solid #2a2a4a;
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #2a2a4a;
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+.detail-row .key {
+  font-size: 0.9rem;
+  color: #8080a0;
+}
+
+.detail-row .val {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffffff;
+}
