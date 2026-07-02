@@ -12,13 +12,23 @@
         </div>
 
         <div class="form-group">
-          <label>Sex (M / F)</label>
-          <input type="text" [(ngModel)]="form.Sex" name="Sex" placeholder="M or F" />
+          <label>Sex</label>
+          <select [(ngModel)]="form.Sex" name="Sex">
+            <option value="">Select</option>
+            <option value="M">Male</option>
+            <option value="F">Female</option>
+          </select>
         </div>
 
         <div class="form-group">
           <label>Chest Pain Type</label>
-          <input type="text" [(ngModel)]="form.ChestPainType" name="ChestPainType" placeholder="ATA / NAP / ASY / TA" />
+          <select [(ngModel)]="form.ChestPainType" name="ChestPainType">
+            <option value="">Select</option>
+            <option value="ATA">ATA — Atypical Angina</option>
+            <option value="NAP">NAP — Non-Anginal Pain</option>
+            <option value="ASY">ASY — Asymptomatic</option>
+            <option value="TA">TA — Typical Angina</option>
+          </select>
         </div>
 
         <div class="form-group">
@@ -38,7 +48,12 @@
 
         <div class="form-group">
           <label>Resting ECG</label>
-          <input type="text" [(ngModel)]="form.RestingECG" name="RestingECG" placeholder="Normal / ST / LVH" />
+          <select [(ngModel)]="form.RestingECG" name="RestingECG">
+            <option value="">Select</option>
+            <option value="Normal">Normal</option>
+            <option value="ST">ST — ST-T wave abnormality</option>
+            <option value="LVH">LVH — Left Ventricular Hypertrophy</option>
+          </select>
         </div>
 
         <div class="form-group">
@@ -48,7 +63,11 @@
 
         <div class="form-group">
           <label>Exercise Angina</label>
-          <input type="text" [(ngModel)]="form.ExerciseAngina" name="ExerciseAngina" placeholder="Y or N" />
+          <select [(ngModel)]="form.ExerciseAngina" name="ExerciseAngina">
+            <option value="">Select</option>
+            <option value="Y">Yes</option>
+            <option value="N">No</option>
+          </select>
         </div>
 
         <div class="form-group">
@@ -58,7 +77,12 @@
 
         <div class="form-group">
           <label>ST Slope</label>
-          <input type="text" [(ngModel)]="form.ST_Slope" name="ST_Slope" placeholder="Up / Flat / Down" />
+          <select [(ngModel)]="form.ST_Slope" name="ST_Slope">
+            <option value="">Select</option>
+            <option value="Up">Up</option>
+            <option value="Flat">Flat</option>
+            <option value="Down">Down</option>
+          </select>
         </div>
 
       </div>

@@ -38,7 +38,8 @@
   letter-spacing: 0.05em;
 }
 
-.form-group input {
+.form-group input,
+.form-group select {
   background: #0f0f1a;
   border: 1px solid #2a2a4a;
   border-radius: 8px;
@@ -47,10 +48,18 @@
   font-size: 0.95rem;
   transition: border-color 0.2s;
   outline: none;
+  width: 100%;
+  appearance: none;
 }
 
-.form-group input:focus {
+.form-group input:focus,
+.form-group select:focus {
   border-color: #e94560;
+}
+
+.form-group select option {
+  background: #1a1a2e;
+  color: #ffffff;
 }
 
 .btn-predict {
