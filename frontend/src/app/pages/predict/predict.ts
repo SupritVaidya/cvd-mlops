@@ -12,17 +12,17 @@ import { DecimalPipe } from '@angular/common';
 })
 export class Predict {
 
-    form = {
-    Age: 0,
+    form: any = {
+    Age: null,
     Sex: '',
     ChestPainType: '',
-    RestingBP: 0,
-    Cholesterol: 0,
-    FastingBS: 0,
+    RestingBP: null,
+    Cholesterol: null,
+    FastingBS: '',
     RestingECG: '',
-    MaxHR: 0,
+    MaxHR: null,
     ExerciseAngina: '',
-    Oldpeak: 0,
+    Oldpeak: null,
     ST_Slope: ''
   };
 

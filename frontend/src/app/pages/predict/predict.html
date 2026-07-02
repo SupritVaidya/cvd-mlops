@@ -3,91 +3,139 @@
   <p class="subtitle">Enter patient vitals below and click Predict</p>
 
   <div class="form-card">
-    <form (ngSubmit)="submit()">
+    <form (ngSubmit)="submit()" #predictForm="ngForm">
       <div class="form-grid">
 
         <div class="form-group">
           <label>Age</label>
-          <input type="number" [(ngModel)]="form.Age" name="Age" placeholder="e.g. 54" />
+          <input type="number" [(ngModel)]="form.Age" name="Age" required min="1" max="120" #age="ngModel"
+            [class.invalid]="age.invalid && age.touched" />
+          @if (age.invalid && age.touched) {
+            <span class="error">Age must be between 1 and 120</span>
+          }
         </div>
 
         <div class="form-group">
           <label>Sex</label>
-          <select [(ngModel)]="form.Sex" name="Sex">
+          <select [(ngModel)]="form.Sex" name="Sex" required #sex="ngModel"
+            [class.invalid]="sex.invalid && sex.touched">
             <option value="">Select</option>
             <option value="M">Male</option>
             <option value="F">Female</option>
           </select>
+          @if (sex.invalid && sex.touched) {
+            <span class="error">Please select a sex</span>
+          }
         </div>
 
         <div class="form-group">
           <label>Chest Pain Type</label>
-          <select [(ngModel)]="form.ChestPainType" name="ChestPainType">
+          <select [(ngModel)]="form.ChestPainType" name="ChestPainType" required #cpt="ngModel"
+            [class.invalid]="cpt.invalid && cpt.touched">
             <option value="">Select</option>
             <option value="ATA">ATA — Atypical Angina</option>
             <option value="NAP">NAP — Non-Anginal Pain</option>
             <option value="ASY">ASY — Asymptomatic</option>
             <option value="TA">TA — Typical Angina</option>
           </select>
+          @if (cpt.invalid && cpt.touched) {
+            <span class="error">Please select a chest pain type</span>
+          }
         </div>
 
         <div class="form-group">
           <label>Resting BP (mmHg)</label>
-          <input type="number" [(ngModel)]="form.RestingBP" name="RestingBP" placeholder="e.g. 130" />
+          <input type="number" [(ngModel)]="form.RestingBP" name="RestingBP" required min="50" max="300" #rbp="ngModel"
+            [class.invalid]="rbp.invalid && rbp.touched" />
+          @if (rbp.invalid && rbp.touched) {
+            <span class="error">Resting BP must be between 50 and 300</span>
+          }
         </div>
 
         <div class="form-group">
           <label>Cholesterol (mg/dL)</label>
-          <input type="number" [(ngModel)]="form.Cholesterol" name="Cholesterol" placeholder="e.g. 250" />
+          <input type="number" [(ngModel)]="form.Cholesterol" name="Cholesterol" required min="0" max="600" #chol="ngModel"
+            [class.invalid]="chol.invalid && chol.touched" />
+          @if (chol.invalid && chol.touched) {
+            <span class="error">Cholesterol must be between 0 and 600</span>
+          }
         </div>
 
         <div class="form-group">
           <label>Fasting Blood Sugar</label>
-          <input type="number" [(ngModel)]="form.FastingBS" name="FastingBS" placeholder="0 or 1" />
+          <select [(ngModel)]="form.FastingBS" name="FastingBS" required #fbs="ngModel"
+            [class.invalid]="fbs.invalid && fbs.touched">
+            <option value="">Select</option>
+            <option [ngValue]="0">0 — Below 120 mg/dL</option>
+            <option [ngValue]="1">1 — Above 120 mg/dL</option>
+          </select>
+          @if (fbs.invalid && fbs.touched) {
+            <span class="error">Please select a value</span>
+          }
         </div>
 
         <div class="form-group">
           <label>Resting ECG</label>
-          <select [(ngModel)]="form.RestingECG" name="RestingECG">
+          <select [(ngModel)]="form.RestingECG" name="RestingECG" required #ecg="ngModel"
+            [class.invalid]="ecg.invalid && ecg.touched">
             <option value="">Select</option>
             <option value="Normal">Normal</option>
             <option value="ST">ST — ST-T wave abnormality</option>
             <option value="LVH">LVH — Left Ventricular Hypertrophy</option>
           </select>
+          @if (ecg.invalid && ecg.touched) {
+            <span class="error">Please select an ECG result</span>
+          }
         </div>
 
         <div class="form-group">
           <label>Max Heart Rate</label>
-          <input type="number" [(ngModel)]="form.MaxHR" name="MaxHR" placeholder="e.g. 150" />
+          <input type="number" [(ngModel)]="form.MaxHR" name="MaxHR" required min="50" max="250" #mhr="ngModel"
+            [class.invalid]="mhr.invalid && mhr.touched" />
+          @if (mhr.invalid && mhr.touched) {
+            <span class="error">Max HR must be between 50 and 250</span>
+          }
         </div>
 
         <div class="form-group">
           <label>Exercise Angina</label>
-          <select [(ngModel)]="form.ExerciseAngina" name="ExerciseAngina">
+          <select [(ngModel)]="form.ExerciseAngina" name="ExerciseAngina" required #ea="ngModel"
+            [class.invalid]="ea.invalid && ea.touched">
             <option value="">Select</option>
             <option value="Y">Yes</option>
             <option value="N">No</option>
           </select>
+          @if (ea.invalid && ea.touched) {
+            <span class="error">Please select a value</span>
+          }
         </div>
 
         <div class="form-group">
           <label>Oldpeak (ST depression)</label>
-          <input type="number" [(ngModel)]="form.Oldpeak" name="Oldpeak" placeholder="e.g. 1.5" step="0.1" />
+          <input type="number" [(ngModel)]="form.Oldpeak" name="Oldpeak" required min="-5" max="10" step="0.1" #op="ngModel"
+            [class.invalid]="op.invalid && op.touched" />
+          @if (op.invalid && op.touched) {
+            <span class="error">Oldpeak must be between -5 and 10</span>
+          }
         </div>
 
         <div class="form-group">
           <label>ST Slope</label>
-          <select [(ngModel)]="form.ST_Slope" name="ST_Slope">
+          <select [(ngModel)]="form.ST_Slope" name="ST_Slope" required #sts="ngModel"
+            [class.invalid]="sts.invalid && sts.touched">
             <option value="">Select</option>
             <option value="Up">Up</option>
             <option value="Flat">Flat</option>
             <option value="Down">Down</option>
           </select>
+          @if (sts.invalid && sts.touched) {
+            <span class="error">Please select an ST slope</span>
+          }
         </div>
 
       </div>
 
-      <button type="submit" class="btn-predict">Predict Risk</button>
+      <button type="submit" class="btn-predict" [disabled]="predictForm.invalid">Predict Risk</button>
     </form>
   </div>
 

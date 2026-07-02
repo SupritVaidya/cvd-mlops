@@ -62,6 +62,24 @@
   color: #ffffff;
 }
 
+.form-group input.invalid,
+.form-group select.invalid {
+  border-color: #e94560;
+}
+
+.error {
+  font-size: 0.75rem;
+  color: #e94560;
+  margin-top: 0.2rem;
+}
+
+.btn-predict:disabled {
+  background: #4a2a35;
+  color: #8a5060;
+  cursor: not-allowed;
+  transform: none;
+}
+
 .btn-predict {
   background: #e94560;
   color: white;
