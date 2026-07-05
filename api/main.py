@@ -44,9 +44,10 @@ class PatientInput(BaseModel):
     Oldpeak: float
     ST_Slope: str
 
-@app.get("/health")
+@app.get("/health", include_in_schema=True)
+@app.head("/health")
 def get_health():
-    return {"status":"ok"}
+    return {"status": "ok"}
 
 @app.get("/metrics")
 def get_metrics():
