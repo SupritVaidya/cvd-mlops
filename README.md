@@ -1,3 +1,7 @@
+## 🔗 Live Demo
+- **Frontend:** https://cvd-mlops.netlify.app
+- **Backend API:** https://cvd-mlops-backend.onrender.com/health
+
 # CVD Prediction System with Fairness Monitoring
 
 A production ML system for cardiovascular disease prediction that tracks model fairness across gender groups.
@@ -41,7 +45,7 @@ cvd-mlops/
 ├── api/main.py                # FastAPI endpoints
 ├── frontend/                  # Angular app (Home, Predict, Model Info)
 ├── monitoring/                # Evidently drift reports
-├── models/                    # Serialised artifacts (gitignored)
+├── models/                    # Serialised artifacts
 ├── Dockerfile                 # Backend container
 ├── frontend/Dockerfile        # Frontend container
 ├── docker-compose.yml         # Runs full stack
