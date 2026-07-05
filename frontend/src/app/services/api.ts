@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class Api {
 
-  private baseUrl = 'http://localhost:8000';
+  private baseUrl = 'https://cvd-mlops-backend.onrender.com';
 
   constructor(private http: HttpClient) {}
 
