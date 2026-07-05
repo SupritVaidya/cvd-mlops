@@ -5,7 +5,7 @@ from pydantic import BaseModel
 from preprocess import preprocess_single
 import json
 
-state = {} #module level directory
+state = {}
 
 FAIRNESS_LOW = 0.40
 FAIRNESS_HIGH = 0.60
@@ -25,7 +25,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:4200"],
+    allow_origins=["*"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -63,8 +63,8 @@ def get_drift_report():
 
 @app.post("/predict")
 def post_predict(patient: PatientInput):
-    raw = patient.model_dump() #Converting pydantic model into raw data
-    X = preprocess_single(raw, state["preprocess"]) #Running the data from the preprocessor pipeline
+    raw = patient.model_dump()
+    X = preprocess_single(raw, state["preprocess"])
     '''
     predict() returns an array — [0] gets the first (only) element. 
     predict_proba() returns probabilities for both classes — [0][1] gets the probability of class 1 (CVD). 
