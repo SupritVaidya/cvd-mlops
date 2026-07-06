@@ -136,3 +136,33 @@
   font-size: 0.9rem;
   color: #c0c0d0;
 }
+
+@media (max-width: 768px) {
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .recall-gap-callout {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+
+  .gap-value {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .metric-card .metric-value {
+    font-size: 1.75rem;
+  }
+
+  .detail-card {
+    padding: 1rem;
+  }
+
+  .chart-card {
+    padding: 1rem;
+  }
+}

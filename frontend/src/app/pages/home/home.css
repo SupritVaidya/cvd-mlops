@@ -84,3 +84,28 @@
   font-size: 0.9rem;
   color: #8080a0;
 }
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .cards-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .cards-row {
+    grid-template-columns: 1fr;
+  }
+
+  .status-card {
+    display: flex;
+    width: 100%;
+  }
+}
